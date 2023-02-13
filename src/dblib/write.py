@@ -1,4 +1,9 @@
 from utils import get
+import pyspark
+
+spark = pyspark.sql.SparkSession.builder.getOrCreate()
+
+dbutils = pyspark.dbutils.DBUtils(spark) 
 
 
 def csv(df, file_name, output_directory):
